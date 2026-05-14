@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 import java.util.UUID;
-
+//Kip
 @Repository
 public interface StudentClasseSectionRepository extends JpaRepository<StudentClasseSection, UUID> {
 
