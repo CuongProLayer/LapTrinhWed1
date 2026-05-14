@@ -9,7 +9,7 @@ public class StudentClassRequest {
 
     @NotBlank(message = "Tên lớp không được để trống")
     private String name;
-
+//
     private UUID academicYearId;
     private UUID departmentId;
     private UUID majorId;
