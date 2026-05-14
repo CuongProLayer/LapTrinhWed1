@@ -2,7 +2,7 @@ package com.example.kthp_ltwn2.dto;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
-//
+
 
 public class AdvisorClassSectionResponse {
     private UUID id;
