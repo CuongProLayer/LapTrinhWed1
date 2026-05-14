@@ -19,7 +19,7 @@ public class StudentClasseSectionResponse {
     private Boolean isActive;
 
     public StudentClasseSectionResponse() {}
-
+//
     public StudentClasseSectionResponse(UUID id, UUID studentId, String studentCode, String studentFullName, UUID studentClasseId, String studentClasseCode, String status, String note, LocalDateTime startDate, LocalDateTime endDate, LocalDateTime createdAt, LocalDateTime updatedAt, Boolean isActive) {
         this.id = id;
         this.studentId = studentId;
