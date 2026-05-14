@@ -5,7 +5,7 @@ import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
-
+//Kip
 @Entity
 @Table(name = "majors")
 public class Major {
