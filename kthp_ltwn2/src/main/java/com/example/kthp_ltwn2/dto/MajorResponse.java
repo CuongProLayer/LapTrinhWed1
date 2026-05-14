@@ -17,7 +17,7 @@ public class MajorResponse {
     public void setDepartmentId(UUID departmentId) { this.departmentId = departmentId; }
     public String getDepartmentName() { return departmentName; }
     public void setDepartmentName(String departmentName) { this.departmentName = departmentName; }
-
+//
     public static MajorResponseBuilder builder() { return new MajorResponseBuilder(); }
     public static class MajorResponseBuilder {
         private UUID id;
