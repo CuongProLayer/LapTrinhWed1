@@ -1,5 +1,6 @@
 package com.example.kthp_ltwn2.dto;
 import java.util.UUID;
+
 public class AcademicYearResponse {
     private UUID id;
     private String code;
