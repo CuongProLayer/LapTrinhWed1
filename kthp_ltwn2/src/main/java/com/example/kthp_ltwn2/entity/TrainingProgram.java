@@ -43,7 +43,8 @@ public class TrainingProgram {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
         updatedAt = LocalDateTime.now();
-        if (isActive == null) isActive = true;
+        if (isActive == null)
+            isActive = true;
     }
 
     @PreUpdate
@@ -51,24 +52,78 @@ public class TrainingProgram {
         updatedAt = LocalDateTime.now();
     }
 
-    public TrainingProgram() {}
+    public TrainingProgram() {
+    }
 
-    public UUID getId() { return id; }
-    public void setId(UUID id) { this.id = id; }
-    public String getCode() { return code; }
-    public void setCode(String code) { this.code = code; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public UUID getMajorId() { return majorId; }
-    public void setMajorId(UUID majorId) { this.majorId = majorId; }
-    public String getDegreeLevel() { return degreeLevel; }
-    public void setDegreeLevel(String degreeLevel) { this.degreeLevel = degreeLevel; }
-    public Boolean getIsActive() { return isActive; }
-    public void setIsActive(Boolean isActive) { this.isActive = isActive; }
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
-    public LocalDateTime getUpdatedAt() { return updatedAt; }
-    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
-    public LocalDateTime getDeletedAt() { return deletedAt; }
-    public void setDeletedAt(LocalDateTime deletedAt) { this.deletedAt = deletedAt; }
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public UUID getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(UUID majorId) {
+        this.majorId = majorId;
+    }
+
+    public String getDegreeLevel() {
+        return degreeLevel;
+    }
+
+    public void setDegreeLevel(String degreeLevel) {
+        this.degreeLevel = degreeLevel;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public LocalDateTime getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(LocalDateTime deletedAt) {
+        this.deletedAt = deletedAt;
+    }
 }
