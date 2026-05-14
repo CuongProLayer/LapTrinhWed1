@@ -5,7 +5,7 @@ import org.hibernate.annotations.UuidGenerator;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
-//Kip
+
 @Entity
 @Table(name = "advisor_classe_sections")
 public class AdvisorClassSection {
