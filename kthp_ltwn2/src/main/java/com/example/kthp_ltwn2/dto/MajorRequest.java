@@ -4,7 +4,7 @@ public class MajorRequest {
     private String code;
     private String name;
     private UUID departmentId;
-    //
+    
     public MajorRequest() {}
     public String getCode() { return code; }
     public void setCode(String code) { this.code = code; }
