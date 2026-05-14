@@ -7,6 +7,7 @@ public class DepartmentRequest {
     private String code;
     private String name;
     private String description;
+    //
 
     public DepartmentRequest() {}
     public String getCode() { return code; }
