@@ -89,7 +89,8 @@ public class Student {
     @PrePersist
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
-        if (this.isActive == null) this.isActive = true;
+        if (this.isActive == null)
+            this.isActive = true;
     }
 
     @PreUpdate
@@ -97,9 +98,15 @@ public class Student {
         this.updatedAt = LocalDateTime.now();
     }
 
-    public Student() {}
+    public Student() {
+    }
 
-    public Student(UUID id, String code, String fullName, LocalDate dateOfBirth, String gender, String personalIdentificationNumber, LocalDate dateOfIssue, String cardPlace, String address, String currentAddress, UUID academicYearYear, UUID departmentId, UUID majorId, UUID trainingProgramId, String status, UUID studentClasseId, LocalDateTime admissionYear, LocalDateTime createdAt, LocalDateTime updatedAt, UUID createdBy, UUID updatedBy, LocalDateTime deletedAt, UUID deletedBy, Boolean isActive) {
+    public Student(UUID id, String code, String fullName, LocalDate dateOfBirth, String gender,
+            String personalIdentificationNumber, LocalDate dateOfIssue, String cardPlace, String address,
+            String currentAddress, UUID academicYearYear, UUID departmentId, UUID majorId, UUID trainingProgramId,
+            String status, UUID studentClasseId, LocalDateTime admissionYear, LocalDateTime createdAt,
+            LocalDateTime updatedAt, UUID createdBy, UUID updatedBy, LocalDateTime deletedAt, UUID deletedBy,
+            Boolean isActive) {
         this.id = id;
         this.code = code;
         this.fullName = fullName;
@@ -126,79 +133,202 @@ public class Student {
         this.isActive = isActive;
     }
 
-    public UUID getId() { return id; }
-    public void setId(UUID id) { this.id = id; }
+    public UUID getId() {
+        return id;
+    }
 
-    public String getCode() { return code; }
-    public void setCode(String code) { this.code = code; }
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
-    public String getFullName() { return fullName; }
-    public void setFullName(String fullName) { this.fullName = fullName; }
+    public String getCode() {
+        return code;
+    }
 
-    public LocalDate getDateOfBirth() { return dateOfBirth; }
-    public void setDateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-    public String getGender() { return gender; }
-    public void setGender(String gender) { this.gender = gender; }
+    public String getFullName() {
+        return fullName;
+    }
 
-    public String getPersonalIdentificationNumber() { return personalIdentificationNumber; }
-    public void setPersonalIdentificationNumber(String personalIdentificationNumber) { this.personalIdentificationNumber = personalIdentificationNumber; }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-    public LocalDate getDateOfIssue() { return dateOfIssue; }
-    public void setDateOfIssue(LocalDate dateOfIssue) { this.dateOfIssue = dateOfIssue; }
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
 
-    public String getCardPlace() { return cardPlace; }
-    public void setCardPlace(String cardPlace) { this.cardPlace = cardPlace; }
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public String getGender() {
+        return gender;
+    }
 
-    public String getCurrentAddress() { return currentAddress; }
-    public void setCurrentAddress(String currentAddress) { this.currentAddress = currentAddress; }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-    public UUID getAcademicYearYear() { return academicYearYear; }
-    public void setAcademicYearYear(UUID academicYearYear) { this.academicYearYear = academicYearYear; }
+    public String getPersonalIdentificationNumber() {
+        return personalIdentificationNumber;
+    }
 
-    public UUID getDepartmentId() { return departmentId; }
-    public void setDepartmentId(UUID departmentId) { this.departmentId = departmentId; }
+    public void setPersonalIdentificationNumber(String personalIdentificationNumber) {
+        this.personalIdentificationNumber = personalIdentificationNumber;
+    }
 
-    public UUID getMajorId() { return majorId; }
-    public void setMajorId(UUID majorId) { this.majorId = majorId; }
+    public LocalDate getDateOfIssue() {
+        return dateOfIssue;
+    }
 
-    public UUID getTrainingProgramId() { return trainingProgramId; }
-    public void setTrainingProgramId(UUID trainingProgramId) { this.trainingProgramId = trainingProgramId; }
+    public void setDateOfIssue(LocalDate dateOfIssue) {
+        this.dateOfIssue = dateOfIssue;
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public String getCardPlace() {
+        return cardPlace;
+    }
 
-    public UUID getStudentClasseId() { return studentClasseId; }
-    public void setStudentClasseId(UUID studentClasseId) { this.studentClasseId = studentClasseId; }
+    public void setCardPlace(String cardPlace) {
+        this.cardPlace = cardPlace;
+    }
 
-    public LocalDateTime getAdmissionYear() { return admissionYear; }
-    public void setAdmissionYear(LocalDateTime admissionYear) { this.admissionYear = admissionYear; }
+    public String getAddress() {
+        return address;
+    }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-    public LocalDateTime getUpdatedAt() { return updatedAt; }
-    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+    public String getCurrentAddress() {
+        return currentAddress;
+    }
 
-    public UUID getCreatedBy() { return createdBy; }
-    public void setCreatedBy(UUID createdBy) { this.createdBy = createdBy; }
+    public void setCurrentAddress(String currentAddress) {
+        this.currentAddress = currentAddress;
+    }
 
-    public UUID getUpdatedBy() { return updatedBy; }
-    public void setUpdatedBy(UUID updatedBy) { this.updatedBy = updatedBy; }
+    public UUID getAcademicYearYear() {
+        return academicYearYear;
+    }
 
-    public LocalDateTime getDeletedAt() { return deletedAt; }
-    public void setDeletedAt(LocalDateTime deletedAt) { this.deletedAt = deletedAt; }
+    public void setAcademicYearYear(UUID academicYearYear) {
+        this.academicYearYear = academicYearYear;
+    }
 
-    public UUID getDeletedBy() { return deletedBy; }
-    public void setDeletedBy(UUID deletedBy) { this.deletedBy = deletedBy; }
+    public UUID getDepartmentId() {
+        return departmentId;
+    }
 
-    public Boolean getIsActive() { return isActive; }
-    public void setIsActive(Boolean isActive) { this.isActive = isActive; }
+    public void setDepartmentId(UUID departmentId) {
+        this.departmentId = departmentId;
+    }
 
-    public static StudentBuilder builder() { return new StudentBuilder(); }
+    public UUID getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(UUID majorId) {
+        this.majorId = majorId;
+    }
+
+    public UUID getTrainingProgramId() {
+        return trainingProgramId;
+    }
+
+    public void setTrainingProgramId(UUID trainingProgramId) {
+        this.trainingProgramId = trainingProgramId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public UUID getStudentClasseId() {
+        return studentClasseId;
+    }
+
+    public void setStudentClasseId(UUID studentClasseId) {
+        this.studentClasseId = studentClasseId;
+    }
+
+    public LocalDateTime getAdmissionYear() {
+        return admissionYear;
+    }
+
+    public void setAdmissionYear(LocalDateTime admissionYear) {
+        this.admissionYear = admissionYear;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public UUID getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(UUID createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public UUID getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(UUID updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+    public LocalDateTime getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(LocalDateTime deletedAt) {
+        this.deletedAt = deletedAt;
+    }
+
+    public UUID getDeletedBy() {
+        return deletedBy;
+    }
+
+    public void setDeletedBy(UUID deletedBy) {
+        this.deletedBy = deletedBy;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    public static StudentBuilder builder() {
+        return new StudentBuilder();
+    }
+
     public static class StudentBuilder {
         private UUID id;
         private String code;
@@ -225,33 +355,131 @@ public class Student {
         private UUID deletedBy;
         private Boolean isActive;
 
-        public StudentBuilder id(UUID id) { this.id = id; return this; }
-        public StudentBuilder code(String code) { this.code = code; return this; }
-        public StudentBuilder fullName(String fullName) { this.fullName = fullName; return this; }
-        public StudentBuilder dateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth = dateOfBirth; return this; }
-        public StudentBuilder gender(String gender) { this.gender = gender; return this; }
-        public StudentBuilder personalIdentificationNumber(String personalIdentificationNumber) { this.personalIdentificationNumber = personalIdentificationNumber; return this; }
-        public StudentBuilder dateOfIssue(LocalDate dateOfIssue) { this.dateOfIssue = dateOfIssue; return this; }
-        public StudentBuilder cardPlace(String cardPlace) { this.cardPlace = cardPlace; return this; }
-        public StudentBuilder address(String address) { this.address = address; return this; }
-        public StudentBuilder currentAddress(String currentAddress) { this.currentAddress = currentAddress; return this; }
-        public StudentBuilder academicYearYear(UUID academicYearYear) { this.academicYearYear = academicYearYear; return this; }
-        public StudentBuilder departmentId(UUID departmentId) { this.departmentId = departmentId; return this; }
-        public StudentBuilder majorId(UUID majorId) { this.majorId = majorId; return this; }
-        public StudentBuilder trainingProgramId(UUID trainingProgramId) { this.trainingProgramId = trainingProgramId; return this; }
-        public StudentBuilder status(String status) { this.status = status; return this; }
-        public StudentBuilder studentClasseId(UUID studentClasseId) { this.studentClasseId = studentClasseId; return this; }
-        public StudentBuilder admissionYear(LocalDateTime admissionYear) { this.admissionYear = admissionYear; return this; }
-        public StudentBuilder createdAt(LocalDateTime createdAt) { this.createdAt = createdAt; return this; }
-        public StudentBuilder updatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; return this; }
-        public StudentBuilder createdBy(UUID createdBy) { this.createdBy = createdBy; return this; }
-        public StudentBuilder updatedBy(UUID updatedBy) { this.updatedBy = updatedBy; return this; }
-        public StudentBuilder deletedAt(LocalDateTime deletedAt) { this.deletedAt = deletedAt; return this; }
-        public StudentBuilder deletedBy(UUID deletedBy) { this.deletedBy = deletedBy; return this; }
-        public StudentBuilder isActive(Boolean isActive) { this.isActive = isActive; return this; }
+        public StudentBuilder id(UUID id) {
+            this.id = id;
+            return this;
+        }
+
+        public StudentBuilder code(String code) {
+            this.code = code;
+            return this;
+        }
+
+        public StudentBuilder fullName(String fullName) {
+            this.fullName = fullName;
+            return this;
+        }
+
+        public StudentBuilder dateOfBirth(LocalDate dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+            return this;
+        }
+
+        public StudentBuilder gender(String gender) {
+            this.gender = gender;
+            return this;
+        }
+
+        public StudentBuilder personalIdentificationNumber(String personalIdentificationNumber) {
+            this.personalIdentificationNumber = personalIdentificationNumber;
+            return this;
+        }
+
+        public StudentBuilder dateOfIssue(LocalDate dateOfIssue) {
+            this.dateOfIssue = dateOfIssue;
+            return this;
+        }
+
+        public StudentBuilder cardPlace(String cardPlace) {
+            this.cardPlace = cardPlace;
+            return this;
+        }
+
+        public StudentBuilder address(String address) {
+            this.address = address;
+            return this;
+        }
+
+        public StudentBuilder currentAddress(String currentAddress) {
+            this.currentAddress = currentAddress;
+            return this;
+        }
+
+        public StudentBuilder academicYearYear(UUID academicYearYear) {
+            this.academicYearYear = academicYearYear;
+            return this;
+        }
+
+        public StudentBuilder departmentId(UUID departmentId) {
+            this.departmentId = departmentId;
+            return this;
+        }
+
+        public StudentBuilder majorId(UUID majorId) {
+            this.majorId = majorId;
+            return this;
+        }
+
+        public StudentBuilder trainingProgramId(UUID trainingProgramId) {
+            this.trainingProgramId = trainingProgramId;
+            return this;
+        }
+
+        public StudentBuilder status(String status) {
+            this.status = status;
+            return this;
+        }
+
+        public StudentBuilder studentClasseId(UUID studentClasseId) {
+            this.studentClasseId = studentClasseId;
+            return this;
+        }
+
+        public StudentBuilder admissionYear(LocalDateTime admissionYear) {
+            this.admissionYear = admissionYear;
+            return this;
+        }
+
+        public StudentBuilder createdAt(LocalDateTime createdAt) {
+            this.createdAt = createdAt;
+            return this;
+        }
+
+        public StudentBuilder updatedAt(LocalDateTime updatedAt) {
+            this.updatedAt = updatedAt;
+            return this;
+        }
+
+        public StudentBuilder createdBy(UUID createdBy) {
+            this.createdBy = createdBy;
+            return this;
+        }
+
+        public StudentBuilder updatedBy(UUID updatedBy) {
+            this.updatedBy = updatedBy;
+            return this;
+        }
+
+        public StudentBuilder deletedAt(LocalDateTime deletedAt) {
+            this.deletedAt = deletedAt;
+            return this;
+        }
+
+        public StudentBuilder deletedBy(UUID deletedBy) {
+            this.deletedBy = deletedBy;
+            return this;
+        }
+
+        public StudentBuilder isActive(Boolean isActive) {
+            this.isActive = isActive;
+            return this;
+        }
 
         public Student build() {
-            return new Student(id, code, fullName, dateOfBirth, gender, personalIdentificationNumber, dateOfIssue, cardPlace, address, currentAddress, academicYearYear, departmentId, majorId, trainingProgramId, status, studentClasseId, admissionYear, createdAt, updatedAt, createdBy, updatedBy, deletedAt, deletedBy, isActive);
+            return new Student(id, code, fullName, dateOfBirth, gender, personalIdentificationNumber, dateOfIssue,
+                    cardPlace, address, currentAddress, academicYearYear, departmentId, majorId, trainingProgramId,
+                    status, studentClasseId, admissionYear, createdAt, updatedAt, createdBy, updatedBy, deletedAt,
+                    deletedBy, isActive);
         }
     }
 }

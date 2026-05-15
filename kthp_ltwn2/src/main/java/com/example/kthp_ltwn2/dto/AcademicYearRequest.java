@@ -15,3 +15,5 @@ public class AcademicYearRequest {
     public Integer getEndYear() { return endYear; }
     public void setEndYear(Integer endYear) { this.endYear = endYear; }
 }
+
+
