@@ -5,7 +5,7 @@ import com.example.kthp_ltwn2.dto.DepartmentResponse;
 import org.springframework.data.domain.Page;
 
 import java.util.UUID;
-
+//
 public interface DepartmentService {
     Page<DepartmentResponse> getAll(String keyword, int page, int size);
     DepartmentResponse getById(UUID id);
