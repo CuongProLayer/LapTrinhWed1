@@ -9,7 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-//Vuong
+//
 import java.util.UUID;
 
 @RestController
@@ -17,11 +17,10 @@ import java.util.UUID;
 public class StudentApiController {
 
     private final StudentService studentService;
+
     public StudentApiController(StudentService studentService) {
         this.studentService = studentService;
     }
-
-
 
     /** GET /api/students?keyword=&page=0&size=10 */
     @GetMapping
