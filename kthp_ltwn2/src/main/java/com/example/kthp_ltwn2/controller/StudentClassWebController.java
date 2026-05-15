@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+//
 import java.util.UUID;
 
 @Controller
@@ -18,17 +18,16 @@ import java.util.UUID;
 public class StudentClassWebController {
 
     private final StudentClassService service;
+
     public StudentClassWebController(StudentClassService service) {
         this.service = service;
     }
 
-
-
     @GetMapping
     public String list(Model model,
-                       @RequestParam(defaultValue = "") String keyword,
-                       @RequestParam(defaultValue = "0") int page,
-                       @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "") String keyword,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
         Page<StudentClassResponse> classes = service.getAll(keyword, page, size);
         model.addAttribute("classes", classes);
         model.addAttribute("keyword", keyword);
@@ -48,7 +47,7 @@ public class StudentClassWebController {
 
     @PostMapping("/create")
     public String create(@Valid @ModelAttribute("studentClass") StudentClassRequest request,
-                         BindingResult result, Model model, RedirectAttributes ra) {
+            BindingResult result, Model model, RedirectAttributes ra) {
         if (result.hasErrors()) {
             model.addAttribute("isEdit", false);
             return "student-classes/form";
@@ -81,8 +80,8 @@ public class StudentClassWebController {
 
     @PostMapping("/{id}/edit")
     public String update(@PathVariable UUID id,
-                         @Valid @ModelAttribute("studentClass") StudentClassRequest request,
-                         BindingResult result, Model model, RedirectAttributes ra) {
+            @Valid @ModelAttribute("studentClass") StudentClassRequest request,
+            BindingResult result, Model model, RedirectAttributes ra) {
         if (result.hasErrors()) {
             model.addAttribute("isEdit", true);
             model.addAttribute("classId", id);
