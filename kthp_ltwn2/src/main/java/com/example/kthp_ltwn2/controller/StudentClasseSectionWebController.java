@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+//
 import java.util.UUID;
 
 @Controller
@@ -21,18 +21,18 @@ public class StudentClasseSectionWebController {
     private final com.example.kthp_ltwn2.service.StudentService studentService;
     private final com.example.kthp_ltwn2.service.StudentClassService studentClassService;
 
-    public StudentClasseSectionWebController(StudentClasseSectionService service, com.example.kthp_ltwn2.service.StudentService studentService, com.example.kthp_ltwn2.service.StudentClassService studentClassService) {
+    public StudentClasseSectionWebController(StudentClasseSectionService service,
+            com.example.kthp_ltwn2.service.StudentService studentService,
+            com.example.kthp_ltwn2.service.StudentClassService studentClassService) {
         this.service = service;
         this.studentService = studentService;
         this.studentClassService = studentClassService;
     }
 
-
-
     @GetMapping
     public String list(Model model,
-                       @RequestParam(defaultValue = "0") int page,
-                       @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
         Page<StudentClasseSectionResponse> sections = service.getAll(page, size);
         model.addAttribute("sections", sections);
         model.addAttribute("currentPage", page);
@@ -53,7 +53,7 @@ public class StudentClasseSectionWebController {
 
     @PostMapping("/create")
     public String create(@Valid @ModelAttribute("section") StudentClasseSectionRequest request,
-                         BindingResult result, Model model, RedirectAttributes ra) {
+            BindingResult result, Model model, RedirectAttributes ra) {
         if (result.hasErrors()) {
             model.addAttribute("isEdit", false);
             return "student-classe-sections/form";
@@ -88,8 +88,8 @@ public class StudentClasseSectionWebController {
 
     @PostMapping("/{id}/edit")
     public String update(@PathVariable UUID id,
-                         @Valid @ModelAttribute("section") StudentClasseSectionRequest request,
-                         BindingResult result, Model model, RedirectAttributes ra) {
+            @Valid @ModelAttribute("section") StudentClasseSectionRequest request,
+            BindingResult result, Model model, RedirectAttributes ra) {
         if (result.hasErrors()) {
             model.addAttribute("isEdit", true);
             model.addAttribute("sectionId", id);
