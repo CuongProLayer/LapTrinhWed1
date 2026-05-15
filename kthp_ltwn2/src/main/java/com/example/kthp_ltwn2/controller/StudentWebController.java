@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+//
 import java.util.UUID;
 
 @Controller
@@ -24,12 +24,12 @@ public class StudentWebController {
     private final com.example.kthp_ltwn2.service.MajorService majorService;
     private final com.example.kthp_ltwn2.service.TrainingProgramService trainingProgramService;
 
-    public StudentWebController(StudentService studentService, 
-                                com.example.kthp_ltwn2.service.StudentClassService studentClassService,
-                                com.example.kthp_ltwn2.service.AcademicYearService academicYearService,
-                                com.example.kthp_ltwn2.service.DepartmentService departmentService,
-                                com.example.kthp_ltwn2.service.MajorService majorService,
-                                com.example.kthp_ltwn2.service.TrainingProgramService trainingProgramService) {
+    public StudentWebController(StudentService studentService,
+            com.example.kthp_ltwn2.service.StudentClassService studentClassService,
+            com.example.kthp_ltwn2.service.AcademicYearService academicYearService,
+            com.example.kthp_ltwn2.service.DepartmentService departmentService,
+            com.example.kthp_ltwn2.service.MajorService majorService,
+            com.example.kthp_ltwn2.service.TrainingProgramService trainingProgramService) {
         this.studentService = studentService;
         this.studentClassService = studentClassService;
         this.academicYearService = academicYearService;
@@ -38,13 +38,11 @@ public class StudentWebController {
         this.trainingProgramService = trainingProgramService;
     }
 
-
-
     @GetMapping
     public String list(Model model,
-                       @RequestParam(defaultValue = "") String keyword,
-                       @RequestParam(defaultValue = "0") int page,
-                       @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "") String keyword,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
         Page<StudentResponse> students = studentService.getAll(keyword, page, size);
         model.addAttribute("students", students);
         model.addAttribute("classes", studentClassService.getAll("", 0, 1000).getContent());
@@ -70,9 +68,9 @@ public class StudentWebController {
 
     @PostMapping("/create")
     public String create(@Valid @ModelAttribute("student") StudentRequest request,
-                         BindingResult result,
-                         Model model,
-                         RedirectAttributes ra) {
+            BindingResult result,
+            Model model,
+            RedirectAttributes ra) {
         if (result.hasErrors()) {
             model.addAttribute("isEdit", false);
             return "students/form";
@@ -114,10 +112,10 @@ public class StudentWebController {
 
     @PostMapping("/{id}/edit")
     public String update(@PathVariable UUID id,
-                         @Valid @ModelAttribute("student") StudentRequest request,
-                         BindingResult result,
-                         Model model,
-                         RedirectAttributes ra) {
+            @Valid @ModelAttribute("student") StudentRequest request,
+            BindingResult result,
+            Model model,
+            RedirectAttributes ra) {
         if (result.hasErrors()) {
             model.addAttribute("isEdit", true);
             model.addAttribute("studentId", id);
