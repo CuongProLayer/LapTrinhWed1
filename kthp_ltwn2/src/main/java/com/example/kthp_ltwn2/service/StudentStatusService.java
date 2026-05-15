@@ -5,7 +5,7 @@ import com.example.kthp_ltwn2.dto.StudentStatusResponse;
 import org.springframework.data.domain.Page;
 
 import java.util.UUID;
-//
+
 public interface StudentStatusService {
     Page<StudentStatusResponse> getAll(int page, int size);
     StudentStatusResponse getById(UUID id);
