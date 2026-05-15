@@ -9,7 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+//
 import java.util.UUID;
 
 @RestController
@@ -17,11 +17,10 @@ import java.util.UUID;
 public class StudentClasseSectionApiController {
 
     private final StudentClasseSectionService service;
+
     public StudentClasseSectionApiController(StudentClasseSectionService service) {
         this.service = service;
     }
-
-
 
     /** GET /api/student-classe-sections?page=0&size=10 */
     @GetMapping
