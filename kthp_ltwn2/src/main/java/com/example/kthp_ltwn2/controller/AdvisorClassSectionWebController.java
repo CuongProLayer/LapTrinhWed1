@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-//Vuong
+//
 
 import java.util.UUID;
 
@@ -21,15 +21,16 @@ public class AdvisorClassSectionWebController {
     private final AdvisorClassSectionService service;
     private final com.example.kthp_ltwn2.service.StudentClassService studentClassService;
 
-    public AdvisorClassSectionWebController(AdvisorClassSectionService service, com.example.kthp_ltwn2.service.StudentClassService studentClassService) {
+    public AdvisorClassSectionWebController(AdvisorClassSectionService service,
+            com.example.kthp_ltwn2.service.StudentClassService studentClassService) {
         this.service = service;
         this.studentClassService = studentClassService;
     }
 
     @GetMapping
     public String list(Model model,
-                       @RequestParam(defaultValue = "0") int page,
-                       @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
         Page<AdvisorClassSectionResponse> sections = service.getAll(page, size);
         model.addAttribute("sections", sections);
         model.addAttribute("currentPage", page);
@@ -49,7 +50,7 @@ public class AdvisorClassSectionWebController {
 
     @PostMapping("/create")
     public String create(@Valid @ModelAttribute("advisorReq") AdvisorClassSectionRequest request,
-                         BindingResult result, Model model, RedirectAttributes ra) {
+            BindingResult result, Model model, RedirectAttributes ra) {
         if (result.hasErrors()) {
             model.addAttribute("isEdit", false);
             return "advisor-class-sections/form";
@@ -73,7 +74,7 @@ public class AdvisorClassSectionWebController {
         req.setEndDate(res.getEndDate());
         req.setDescription(res.getDescription());
         req.setReason(res.getReason());
-        
+
         model.addAttribute("advisorReq", req);
         model.addAttribute("advisorId", id);
         model.addAttribute("isEdit", true);
@@ -83,8 +84,8 @@ public class AdvisorClassSectionWebController {
 
     @PostMapping("/{id}/edit")
     public String update(@PathVariable UUID id,
-                         @Valid @ModelAttribute("advisorReq") AdvisorClassSectionRequest request,
-                         BindingResult result, Model model, RedirectAttributes ra) {
+            @Valid @ModelAttribute("advisorReq") AdvisorClassSectionRequest request,
+            BindingResult result, Model model, RedirectAttributes ra) {
         if (result.hasErrors()) {
             model.addAttribute("isEdit", true);
             model.addAttribute("advisorId", id);
